@@ -23,6 +23,8 @@ class StudentsController < ApplicationController
   def index
     @students = Student.all
   end
+  
+  Student.where("name LIKE ?", "%M%")
 
   def student_params
     params.require(:student).permit(:name, :birthday, :hometown)
